@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Click Click</title>
+    <style>
+        #press{
+            color:blueviolet;
+        }
+        p {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 40pt;
+}
+        .blue_font {
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(150, 150, 252);
+}
+    </style>
+</head>
+<body>
+<button id="some-id">Hey there!</button>
+<p id="text">Hey there!</p>
+<p>Hey there!</p>
+<p>Hey there!</p>
+<p>Hey there!</p>
+<button id="Press">CLICK ME</button>
+<button id="third">RED</button>
+<script>
+    function someIdClicked() {
+        var sum=0;
+        let arr=prompt("Вводите числа через пробел:");
+        for (let i=0; i<arr.length; i++){
+            sum= +sum + +arr[i];
+    
+        }
+        alert("Сумма:  " + sum);
+    }
+    var someId = document.querySelector('#some-id')
+    someId.addEventListener('click', someIdClicked)
+</script>
+
+<script>
+    function someIdClicked_1() {
+        for (var p of document.getElementsByTagName('p')) {
+            p.classList.toggle('blue_font');
+}
+    }
+   var some_1 = document.querySelector('#Press')
+    some_1.addEventListener('click', someIdClicked_1)
+</script>
+
+<script>
+var status=1;
+ function changeStyle(){
+    var x = document.getElementById('text');
+        if(status==1){
+            x.style.color = 'rgb(233, 160, 160)';
+            status=2;
+        }
+        else if(status==2){
+            x.style.color = 'rgb(238, 87, 87)';
+            status = 3;
+        }
+        else if(status==3){
+            x.style.color = 'rgb(231, 50, 50)';
+            status = 4;
+        }
+        else if(status==4){
+            x.style.color = ' rgb(168, 2, 2)';
+            status = 1;
+        }
+        
+    }
+ 
+ var third = document.querySelector('#third')
+    third.addEventListener('click', changeStyle)
+</script>
+
+</body>
+</html>
+
